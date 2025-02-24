@@ -29,6 +29,9 @@ print(wordList)
 print(MuliplyEachItem(wordList,5))
 [print(x,end="-") for x in wordList]
 print()
-[print(x,end="-") for x in UpperRevertStringJoined(wordList)]
+#[print(x,end="-") for x in UpperRevertStringJoined(wordList)]
+[print(x[::-1].upper(),sep=' ',end='') for x in wordList]
+
+
 
 
