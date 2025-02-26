@@ -8,3 +8,5 @@ Affiche une phrase du style :
 nom = ["Jean", "Le Chat", "Un tournevis", "Ma voiture", "Un collegue"]
 objet = ["un sac à main", "le soleil","une poule", "un jeu-video"]
 lieu = []
+
+#Finirai plus tard
