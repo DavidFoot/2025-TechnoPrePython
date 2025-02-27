@@ -1,13 +1,20 @@
+import os
 import random
 import unicodedata
+import sys
 from termcolor import colored
+
+def clear_screen():
+    if 'win' in sys.platform:
+        os.system('cls')
+    else:
+        os.system('clear')
 
 def strip_accents(s):
    return ''.join(c for c in unicodedata.normalize('NFD', s)
                   if unicodedata.category(c) != 'Mn')
 
 def verify_proposition(proposition,word_to_find ):
-
     word_to_find = list(word_to_find)
     current_word_state = word_to_find.copy()
     for i in range(len(word_to_find)):
@@ -24,14 +31,15 @@ def verify_proposition(proposition,word_to_find ):
 
     for i in range(len(word_to_find)):
         if not i == 0 and proposition and proposition[i] in word_to_find:
+            #Erreur Faut faire une recherche
+            index = ''.join(word_to_find).find(proposition[i])
             current_word_state[i] = colored(proposition[i], 'yellow')
-            word_to_find[i] = '.'
+            word_to_find[index] = '.'
     return ''.join(current_word_state)
 
 # Example string
+clear_screen()
 print(f"On va essayer de faire un {colored("Motus",'red')} {colored("Motus",'yellow')}")
-
-
 mots_francais = [
     "amour", "bonté", "courage", "dévotion", "étoile", "famille", "grâce", "honneur", "idée", "joie",
     "kilos", "légende", "merveille", "nuage", "opinion", "paix", "quête", "rêve", "saison", "tendresse",
@@ -63,29 +71,36 @@ mots_francais = [
     "détente", "espace", "fantôme", "garde", "honneur", "inconnu", "jour", "klaxon", "lune", "magnifique", "neige",
     "offrir", "pouvoir", "quête", "rire", "semaine", "tendre", "unité", "vitesse", "wagon", "xenophobe", "yoga", "zéro"
 ]
+
 pick_a_word = random.randint(0,len(mots_francais))
 word_to_find = strip_accents(mots_francais[pick_a_word].upper())
-nbr_life = 6
-
+nbr_life = 10
 char_already_found = {}
-
-print(f"Le mot a trouver est : {word_to_find}")
 proposition = ""
 
-
-
 print(verify_proposition('',word_to_find))
-game_try = 0
+game_try = 1
+placeholder=""
+for i in range(len(word_to_find) - 1):
+    placeholder += '*'
+placeholder+='|'
 while True:
-    game_try += 1
-    proposition = word_to_find[0] + input(f"Votre proposition: {word_to_find[0]}")
+    # ok j ajoute la premiere lettre du mot a touver avec le input de l utilisateur diminué de la premiere lettre
+
+    #proposition = word_to_find[0]
+    print(f"Essai {game_try}/{nbr_life} - Votre proposition: \n{word_to_find[0]}{placeholder}", end='\r')
+    proposition = input()
+    #print(f"Votre proposition: \n{word_to_find[0]}{pla}", end='\r')
+
     if len(proposition) != len(word_to_find) :
-        print("C'est pas le meme nombre de caracter, recommencez")
+        print("C'est pas le meme nombre de caractere, recommencez")
         continue
+    game_try+=1
     if proposition.upper() == word_to_find:
         print("Bravo Bravo, vous avez trouvé le mot recherché")
         break
     print(verify_proposition(proposition.upper(),word_to_find))
-    if game_try >= 6:
+    if game_try >= nbr_life:
         print("Looser")
+        print(f"Le mot a trouver etait : {word_to_find}")
         break
