@@ -8,3 +8,10 @@ mon_age = 40
 print("Mon age +5 est : " + str(renvoi_age_plus_5(mon_age)))
 
 affiche_nom_age("David", 1982)
+
+
+
+def addition(n1 , n2):
+    return int(n1) + int(n2)
+
+print(addition("40", 20))
