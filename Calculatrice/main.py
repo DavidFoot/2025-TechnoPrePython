@@ -9,13 +9,6 @@ def clic_handler_number(_value):
     current_operande+= str(_value)
     result.config(text=str(current_operande))
 
-
-def remove_last_number():
-    global result, current_operande
-    current_operande = current_operande[0:len(current_operande)-1]
-    result.config(text=str(current_operande))
-
-
 def clic_handler_operator(_value):
     global array_operande, current_operande, array_operator
     array_operande.append(current_operande)
@@ -23,6 +16,10 @@ def clic_handler_operator(_value):
     current_operande=''
     result.config(text="")
 
+def remove_last_number():
+    global result, current_operande
+    current_operande = current_operande[0:len(current_operande)-1]
+    result.config(text=str(current_operande))
 
 def reset_all():
     global array_operande, current_operande, array_operator
@@ -30,7 +27,6 @@ def reset_all():
     current_operande = ''
     array_operator = []
     result.config(text="")
-
 
 def get_calc_done():
     global array_operande, current_operande, array_operator
@@ -42,11 +38,11 @@ def get_calc_done():
         for x in range(1,len(array_operande)):
             if array_operator[x-1] == '+' :
                 res = res + float(array_operande[x])
-            if array_operator[x - 1] == '-':
+            elif array_operator[x - 1] == '-':
                 res = res - float(array_operande[x])
-            if array_operator[x - 1] == '*':
+            elif array_operator[x - 1] == '*':
                 res = res * float(array_operande[x])
-            if array_operator[x - 1] == '/':
+            elif array_operator[x - 1] == '/':
                 res = res / float(array_operande[x])
         array_operande = []
         array_operator = []

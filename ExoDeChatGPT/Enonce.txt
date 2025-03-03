@@ -1,0 +1,41 @@
+Exercice : Jeu de gestion de stock
+Contexte : Tu dois créer un jeu où tu gères un petit stock d'objets dans un magasin.
+Le but du jeu est d'acheter des objets, de les ajouter au stock, et de vendre ces objets à des prix différents en fonction des demandes.
+
+Règles :
+
+
+Inventaire : Tu commenceras avec un inventaire vide, et chaque objet que tu achètes sera ajouté à l'inventaire.
+Prix d'achat et prix de vente : Lors de l'achat d'un objet, tu le payes à un prix d'achat (fixe) et tu peux le revendre à un prix de vente plus élevé. Tu devras déterminer quel est le prix d'achat et le prix de vente en fonction de l'objet.
+
+
+
+Commandes :
+Acheter un objet : Tu peux acheter un certain nombre d'objets en fonction du budget.
+Vendre un objet : Tu peux vendre un objet en fonction de l'inventaire. Le prix de vente sera supérieur au prix d'achat.
+Budget : Tu commences avec un certain budget. Chaque achat diminuera ton budget et chaque vente l'augmentera.
+Bilan : Après chaque action, tu peux afficher ton inventaire, ton budget restant, et le montant total de tes gains ou pertes.
+Objectifs : Le but du jeu est de maximiser tes profits. Le jeu se termine lorsque tu as épuisé ton budget.
+
+
+Détails supplémentaires :
+Inventaire : L'inventaire sera une collection (comme un dictionnaire ou une liste de tuples) avec le nom des objets, leur quantité et leur prix d'achat.
+Transactions : Une fois qu'un objet est vendu, il doit être retiré de l'inventaire, ou sa quantité diminuée.
+Boucles et menus : Il y aura un menu principal qui permet de choisir entre acheter, vendre ou voir l'état du stock et du budget. Tu utiliseras des boucles pour que l'utilisateur puisse jouer de façon continue jusqu'à ce qu'il décide d'arrêter.
+Ce que tu dois faire :
+Créer un menu interactif avec des options pour acheter, vendre et consulter l'état de ton inventaire.
+Créer des fonctions pour acheter et vendre des objets, en tenant compte du budget et de l'inventaire.
+Implémenter une vérification des actions (par exemple, tu ne peux pas vendre un objet que tu n'as pas en stock, ou acheter plus d'objets que ton budget ne te permet).
+Gérer l'historique des transactions et calculer les profits ou pertes en fonction des actions de l'utilisateur.
+Ajouter un système de fin de jeu basé sur l'épuisement du budget.
+Indications :
+Utilise un dictionnaire pour garder une trace des objets en stock, avec pour chaque objet son nom, sa quantité, et son prix d'achat.
+Utilise une fonction pour afficher l'état actuel de ton inventaire (quantités disponibles et prix d'achat).
+Utilise des boucles while pour gérer les commandes et permettre au joueur de jouer plusieurs tours.
+Gère les erreurs comme essayer de vendre plus d'objets que tu n'en as en stock ou d'acheter un objet quand ton budget est insuffisant.
+Exemple de fonctionnement :
+Le joueur démarre avec 1000 unités de monnaie et un inventaire vide.
+Le joueur peut acheter des objets (par exemple, des "café", "t-shirt", etc.) avec un prix d'achat et un prix de vente.
+À chaque vente, le joueur peut réaliser un profit, qui augmente son budget.
+Le jeu continue jusqu'à ce qu'il n'y ait plus d'argent, ou que le joueur décide de quitter.
+C'est un exercice qui te permettra de travailler sur des collections (dictionnaires, listes), des boucles, des fonctions et la gestion d'un petit programme de simulation économique. Bonne chance dans ton développement, et amuse-toi à coder !
