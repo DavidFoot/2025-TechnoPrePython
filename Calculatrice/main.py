@@ -16,7 +16,7 @@ def remove_last_number():
     result.config(text=str(current_operande))
 
 
-def operation(_value):
+def clic_handler_operator(_value):
     global array_operande, current_operande, array_operator
     array_operande.append(current_operande)
     array_operator.append(_value)
@@ -55,7 +55,7 @@ def get_calc_done():
 
 #Creation de la fenetre principale du programme
 main_window = tk.Tk(screenName="Ma calculatrice",baseName="",useTk=True,className="HelloWorld" )
-result = tk.Label(main_window, text='0')
+result = tk.Label(main_window, text='')
 # Les chiffres
 button1 = tk.Button(main_window, text="7", command=lambda:clic_handler_number(7))
 button2 = tk.Button(main_window, text="8", command=lambda:clic_handler_number(8))
@@ -70,10 +70,10 @@ button0 = tk.Button(main_window, text="0", command=lambda:clic_handler_number(0)
 # Les operations
 button_decimal_point = tk.Button(main_window, text=".", command=lambda:clic_handler_number('.'))
 button_equal = tk.Button(main_window, text="=", command=get_calc_done)
-button_sum = tk.Button(main_window, text="+", command=lambda:operation('+'))
-button_substract = tk.Button(main_window, text="-", command=lambda:operation('-'))
-button_divide = tk.Button(main_window, text="/" , command=lambda:operation('/'))
-button_multiply = tk.Button(main_window, text="*" , command=lambda:operation('*'))
+button_sum = tk.Button(main_window, text="+", command=lambda:clic_handler_operator('+'))
+button_substract = tk.Button(main_window, text="-", command=lambda:clic_handler_operator('-'))
+button_divide = tk.Button(main_window, text="/", command=lambda:clic_handler_operator('/'))
+button_multiply = tk.Button(main_window, text="*", command=lambda:clic_handler_operator('*'))
 button_reset = tk.Button(main_window, text="C", command=reset_all)
 button_backspace = tk.Button(main_window, text="<-", command=remove_last_number)
 
