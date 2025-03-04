@@ -45,11 +45,6 @@ Votre score final : 1
 5 - Si la réponse est bonne, afficher pendant 1 seconde "Bonne réponse, votre score est : xxx", puis reboucler à l'étape 1
 
 5bis - Si la réponse n'est pas bonne, sortir du programme et afficher : "Mauvaise réponse, la séquence était : xxxx, votre score final : xxxx"
-
-Questions pour cet exercice
-Collez votre code ici au format code <>
-
-OPTIONNEL : Dites moi ici vos remarques : avez-vous aimé cet exercice ? Est-ce que c'était difficile/facile ? Souhaitez-vous d'autres exercices de ce type ? Combien de temps ça vous a pris ?
 """
 
 import os
