@@ -1,0 +1,91 @@
+Partie 1 : Définition des classes (Object Oriented Programming)
+
+But : Créer une classe Livre et une classe Bibliotheque. La classe Livre représentera un livre, et la classe Bibliotheque gérera un ensemble de livres.
+
+Classe Livre
+
+Définissez une classe Livre avec les attributs suivants :
+titre : le titre du livre.
+auteur : l’auteur du livre.
+annee : l’année de publication du livre.
+disponible : un booléen indiquant si le livre est disponible (True ou False).
+Ajoutez des méthodes dans la classe Livre :
+Un constructeur pour initialiser les attributs.
+Une méthode afficher_info qui affiche le titre, l’auteur, l’année et la disponibilité du livre.
+Une méthode changer_disponibilite qui modifie l’attribut disponible.
+Classe Bibliotheque
+
+Créez une classe Bibliotheque qui contiendra une collection (par exemple une liste) de livres.
+Ajoutez les méthodes suivantes à la classe Bibliotheque :
+ajouter_livre(livre) : Ajoute un livre à la bibliothèque.
+supprimer_livre(titre) : Supprime un livre de la bibliothèque en fonction du titre.
+afficher_livres() : Affiche une liste de tous les livres présents dans la bibliothèque.
+chercher_livre(titre) : Cherche un livre par titre et affiche ses informations.
+Partie 2 : Manipulation de collections
+Créez un dictionnaire dans la classe Bibliotheque pour stocker les livres avec le titre comme clé et l’objet Livre comme valeur. Utilisez ce dictionnaire pour gérer les livres.
+
+Ajoutez une méthode dans la classe Bibliotheque :
+
+lister_par_auteur(auteur) : Affiche tous les livres d'un auteur donné.
+Partie 3 : Interface graphique avec Tkinter
+But : Créer une interface graphique simple pour interagir avec la bibliothèque.
+
+Fenêtre principale
+
+Créez une fenêtre principale avec le titre "Gestion de la Bibliothèque".
+Ajoutez des boutons pour les actions suivantes :
+Ajouter un livre.
+Supprimer un livre.
+Afficher tous les livres.
+Chercher un livre par titre.
+Lister les livres par auteur.
+Ajouter un livre
+
+Lorsque le bouton "Ajouter un livre" est cliqué, une nouvelle fenêtre s’ouvre avec des champs pour entrer :
+Titre
+Auteur
+Année de publication
+Disponibilité (True ou False)
+Ajoutez un bouton "Ajouter" qui permet d’ajouter le livre à la bibliothèque et de fermer la fenêtre.
+Supprimer un livre
+
+Lorsque le bouton "Supprimer un livre" est cliqué, une nouvelle fenêtre s’ouvre avec un champ de texte pour entrer le titre du livre à supprimer.
+Ajoutez un bouton "Supprimer" qui supprime le livre de la bibliothèque et ferme la fenêtre.
+Afficher tous les livres
+
+Lorsque le bouton "Afficher tous les livres" est cliqué, une nouvelle fenêtre affiche la liste de tous les livres présents dans la bibliothèque sous forme de texte, avec les informations de chaque livre (titre, auteur, année, disponibilité).
+Chercher un livre par titre
+
+Lorsque le bouton "Chercher un livre" est cliqué, une nouvelle fenêtre s’ouvre avec un champ de texte pour entrer le titre du livre à chercher.
+Ajoutez un bouton "Chercher" qui affiche les informations du livre si trouvé, sinon un message indiquant qu'il n'a pas été trouvé.
+Lister les livres par auteur
+
+Lorsque le bouton "Lister les livres par auteur" est cliqué, une nouvelle fenêtre s’ouvre avec un champ de texte pour entrer le nom de l’auteur.
+Ajoutez un bouton "Lister" qui affiche tous les livres de cet auteur.
+Partie 4 : Interaction entre les parties
+But : Faire en sorte que la classe Bibliotheque interagisse correctement avec l’interface graphique Tkinter.
+
+Gestion des erreurs
+
+Implémentez des mécanismes pour gérer les erreurs comme :
+Un livre qui n’existe pas quand on tente de le supprimer.
+Un livre qui n’est pas trouvé lors de la recherche par titre.
+Des entrées invalides (par exemple, une année non numérique).
+Affichage dynamique
+
+Lorsqu'un livre est ajouté ou supprimé, mettez à jour l'affichage dans la fenêtre principale pour refléter les changements.
+Partie 5 : Bonus (Optionnel, pour aller plus loin)
+Sauvegarde et chargement des données
+
+Ajoutez une fonctionnalité pour sauvegarder la liste des livres dans un fichier (par exemple, un fichier texte ou JSON) et la charger lors du démarrage de l’application.
+Recherche par année ou disponibilité
+
+Ajoutez la possibilité de rechercher des livres en fonction de leur année de publication ou de leur disponibilité (disponible ou non).
+Consignes supplémentaires :
+Vous devez respecter une bonne organisation du code (modularité, utilisation des classes et des méthodes).
+L'interface graphique doit être simple mais fonctionnelle, et doit permettre d'interagir avec l'utilisateur de manière intuitive.
+Pensez à ajouter des commentaires explicatifs dans votre code.
+Durée estimée : 2 heures.
+Niveau requis : Débutant à intermédiaire (connaissances de base en Python et Tkinter).
+
+Bonne chance !
