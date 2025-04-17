@@ -15,6 +15,7 @@ def strip_accents(s):
                   if unicodedata.category(c) != 'Mn')
 
 def verify_proposition(proposition,word_to_find ):
+
     word_to_find = list(word_to_find)
     current_word_state = word_to_find.copy()
     for i in range(len(word_to_find)):
@@ -28,13 +29,12 @@ def verify_proposition(proposition,word_to_find ):
             current_word_state[i] = proposition[i]
         else:
             current_word_state[i] = '*'
-
     for i in range(len(word_to_find)):
-        if not i == 0 and proposition and proposition[i] in word_to_find:
-            #Erreur Faut faire une recherche
+        if  i != 0 and proposition :
             index = ''.join(word_to_find).find(proposition[i])
-            current_word_state[i] = colored(proposition[i], 'yellow')
-            word_to_find[index] = '.'
+            if index >=0:
+                current_word_state[i] = colored(proposition[i], 'yellow')
+                word_to_find[index] = '.'
     return ''.join(current_word_state)
 
 # Example string
@@ -72,7 +72,7 @@ mots_francais = [
     "offrir", "pouvoir", "quête", "rire", "semaine", "tendre", "unité", "vitesse", "wagon", "xenophobe", "yoga", "zéro"
 ]
 
-pick_a_word = random.randint(0,len(mots_francais))
+pick_a_word = random.randrange(0,len(mots_francais))
 word_to_find = strip_accents(mots_francais[pick_a_word].upper())
 nbr_life = 10
 char_already_found = {}
